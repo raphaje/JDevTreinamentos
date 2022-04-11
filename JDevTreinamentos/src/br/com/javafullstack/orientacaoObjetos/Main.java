@@ -1,4 +1,4 @@
-package br.com.javafullstack.orieontacaoObjetos;
+package br.com.javafullstack.orientacaoObjetos;
 
 public class Main {
 
