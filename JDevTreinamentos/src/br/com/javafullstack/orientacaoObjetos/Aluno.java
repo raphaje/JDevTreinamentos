@@ -2,7 +2,13 @@ package br.com.javafullstack.orientacaoObjetos;
 
 public class Aluno {
 	
-	String nome;
+	
+	/* Esse são os atributos do aluno. 
+	 * Quando não definimos o estado desse atributo
+	 * o java usa por padrão o private,
+	 * podemos usar os valores public, private e protected
+	 * */
+	public String nome;
 	int idade;
 	String dataNascimento;
 	String registroGeral;
