@@ -58,5 +58,31 @@ public class CalculoMedia {
 	public double getNotaMedia() {
 		return (nota1 + nota2 + nota3 + nota4) / 4;
 	}
+	
+	/* Método para retornar True para aprovado e False para reprovado.
+	 * O this é usado quando queremos usar algo do próprio objeto, nesse caso
+	 * estamos recuperando o valor do método getNotaMedia e armazenando
+	 * na varável media que é do tipo double, mesmo tipo do método getNotaMedia. */
+	public boolean getAlunoAprovado() {
+		double media = this.getNotaMedia();
+			if(media >= 70) {
+				return true;
+			}
+			else {
+				return false;
+			}
+	}
+	
+	/* Outra for de calcar a media e retornar APROVADO ou REPROVADO 
+	 * nesse exempo vamos criar um método que retorna String */
+	public String getAlunoAprovado2() {
+		double media = this.getNotaMedia();
+		if(media >= 70) {
+			return "Aluno está aprovado...";
+		}
+		else {
+			return "Aluno está reprovado...";
+		}
+	}
 
 }
