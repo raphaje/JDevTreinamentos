@@ -25,7 +25,16 @@ public class MainEntradaDeDadosTeclado {
 		
 		/* Recuperando o nome do objeto aluno1 usando o método getNome e imprimindo no console. */
 		System.out.println("O nome do aluno é = " + aluno1.getNome());
-		System.out.println("A idade do aluno é = " + aluno1.getIdade());
+		System.out.println("A idade do aluno é = " + aluno1.getIdade() + "\n");
+		
+		/* ###################################################### */
+		
+		/* Método ToString mostra a descrição do objeto na memória 
+		 * mostra na seguinte forma pacote.classe@endereço na memória */
+		System.out.println(aluno1.toString());
+		System.out.println("Nome do aluno é = " + aluno1.getNome());
+		System.out.println("Idade é = " + aluno1.getIdade());
+		
 
 	}
 

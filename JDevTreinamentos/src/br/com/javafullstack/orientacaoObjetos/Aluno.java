@@ -119,5 +119,14 @@ public class Aluno {
 		nome = nomePadrao;
 		idade = idadePadrao;
 	}
+	
+	/* ###### Gerando ToString ####### */
+	@Override
+	public String toString() {
+		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
+				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
+				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
+				+ serieMatriculado + "]";
+	}
 
 }
