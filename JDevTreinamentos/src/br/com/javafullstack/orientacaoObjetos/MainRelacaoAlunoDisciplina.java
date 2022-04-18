@@ -27,7 +27,7 @@ public class MainRelacaoAlunoDisciplina {
 		aluno1.setNumeroCpf(cpf);
 		
 		/* Aqui existe o relação do objeto aluno com objeto disciplina
-		 * então devemoas usar o "getDisciplina" para depois inserir os dados usando o 
+		 * então devemos usar o "getDisciplina" para depois inserir os dados usando o 
 		 * método setDisciplina passando o variavel com o valor que digitamos anteriormente 
 		 * as notas também segue o mesmo padrão */
 		aluno1.getDisciplina().setDisciplina1(disciplina1);
@@ -36,10 +36,15 @@ public class MainRelacaoAlunoDisciplina {
 		aluno1.getDisciplina().setNota3(nota3);
 		aluno1.getDisciplina().setNota4(nota4);
 		
+		/* Imprime ToString */
+		System.out.println(aluno1.toString());
+		
+		/* Imprime no console alguns dados do aluno */
 		System.out.println("Nome do Aluno é = " + nome);
 		System.out.println("Cpf do aluino é = " + cpf);
 		System.out.println("Disciplina 1 = " + disciplina1);
 		
+		/* Imprime o valor da média e se foi aprovado ou reprovado */
 		System.out.println("A média do aluno é = " + aluno1.getNotaMedia());
 		System.out.println(aluno1.getAlunoAprovado() ? "Aluno Aprovado" : "Aluno Reprovado");
 

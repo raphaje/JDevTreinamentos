@@ -89,4 +89,14 @@ public class Disciplina {
 				&& Double.doubleToLongBits(nota3) == Double.doubleToLongBits(other.nota3)
 				&& Double.doubleToLongBits(nota4) == Double.doubleToLongBits(other.nota4);
 	}
+	
+	/* Gerando ToString para atributos da classe Disciplina */
+	@Override
+	public String toString() {
+		return "Disciplina [disciplina1=" + disciplina1 + ", disciplina2=" + disciplina2 + ", disciplina3="
+				+ disciplina3 + ", disciplina4=" + disciplina4 + ", nota1=" + nota1 + ", nota2=" + nota2 + ", nota3="
+				+ nota3 + ", nota4=" + nota4 + "]";
+	}
+	
+	
 }
