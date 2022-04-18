@@ -1,5 +1,7 @@
 package br.com.javafullstack.orientacaoObjetos;
 
+import java.util.Objects;
+
 public class Aluno {
 	
 	
@@ -127,6 +129,27 @@ public class Aluno {
 				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
 				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
 				+ serieMatriculado + "]";
+	}
+	
+	/* ###### Gerando métodos Equal e HashCode para comparar o valor ####### 
+	 * aqui escolhemos apenas o atributo nome e cpf pois pode acontecer de duas pessoas
+	 * ter nome iguais */
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(nome, numeroCpf);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Aluno other = (Aluno) obj;
+		return Objects.equals(nome, other.nome) && Objects.equals(numeroCpf, other.numeroCpf);
 	}
 
 }
