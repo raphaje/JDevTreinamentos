@@ -20,9 +20,21 @@ public class Aluno {
 	String dataMatricula;
 	String nomeEscola;
 	String serieMatriculado;
-		
-	/* Podemos criar um construtor para definir valores padrões */
 	
+	
+	/* Criando objeto disciplina */
+	private Disciplina disciplina = new Disciplina();
+	
+	/* Gerando getters e setters para o objeto disciplina que criamos logo acima. */
+	public void setDisciplina(Disciplina disciplina) {
+		this.disciplina = disciplina;
+	}
+	
+	public Disciplina getDisciplina() {
+		return disciplina;
+	}
+	
+	/* Gerando getters e setters para os atributos da classe aluno */
 	public String getNome() {
 		return nome;
 	}
@@ -109,6 +121,7 @@ public class Aluno {
 		
 	}
 	
+	/* Podemos criar um construtor para definir valores padrões */
 	/* Construtor com varialvel nomePadrao, quando essa variavel recebe valor ela passa para a variavel nome */
 	public Aluno(String nomePadrao) {
 		nome = nomePadrao;
@@ -123,12 +136,13 @@ public class Aluno {
 	}
 	
 	/* ###### Gerando ToString ####### */
+	
 	@Override
 	public String toString() {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
 				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
 				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
-				+ serieMatriculado + "]";
+				+ serieMatriculado + ", disciplina=" + disciplina + "]";
 	}
 	
 	/* ###### Gerando métodos Equal e HashCode para comparar o valor ####### 
@@ -150,6 +164,22 @@ public class Aluno {
 			return false;
 		Aluno other = (Aluno) obj;
 		return Objects.equals(nome, other.nome) && Objects.equals(numeroCpf, other.numeroCpf);
+	}
+	
+	/* Calcula media do aluno */
+	public double getNotaMedia() {
+		return (disciplina.getNota1() + disciplina.getNota2() + disciplina.getNota3() + disciplina.getNota4()) /4 ;
+	}
+	
+	/* Retorna se aluno foi aprovado ou reprovado */
+	public boolean getAlunoAprovado() {
+		double media = this.getNotaMedia();
+		if(media >= 70) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 }
