@@ -10,8 +10,8 @@ public class MainEntradaDeDadosTeclado {
 		/* Usando a biblioteca JOptionPane para inserir dados na aplicação */
 		String nome = JOptionPane.showInputDialog("Qual o nome do aluno ? ");
 		
-		/* OBS: O JOptionPane é do tipo String, caso seja inserido um número que vai usado em um método do tipo inteiro
-		 * ou para fazer cálculo sempre sera necessário converter para o tipo inteiro
+		/* OBS: O JOptionPane é do tipo String, caso seja inserido um número que vai ser usado em um método do tipo inteiro
+		 * ou para fazer cálculo, sempre sera necessário converter para o tipo inteiro
 		 * Nesse exemplo aqui criamos a variável idade do tipo inteiro e já usamos o JOptionPane fazendo
 		 * a conversão do tipo usando o Interger.ParseInt */
 		int idade = (+ Integer.parseInt(JOptionPane.showInputDialog("Qual a idade ?")));
