@@ -39,7 +39,7 @@ public class MainAlunoDisciplinaArrayDinamico {
 		
 		if (escolha == 0) {
 			int disciplinaRemover = (+ Integer.parseInt(JOptionPane.showInputDialog("Qual disciplina deseja remover, 1, 2, 3 ou 4 ?")));
-					aluno.getDisciplinas().remove(disciplinaRemover);
+					aluno.getDisciplinas().remove(disciplinaRemover -1); //Lembre-se que a primeira posição do Array é 0, então preciamos subtrair 1 para remover o correto.
 		}
 		
 		System.out.println(aluno);
