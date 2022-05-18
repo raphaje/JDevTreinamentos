@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class AlunoArray {
-	
+
 	public String nome;
 	int idade;
 	String dataNascimento;
@@ -15,14 +15,14 @@ public class AlunoArray {
 	String dataMatricula;
 	String nomeEscola;
 	String serieMatriculado;
-	
+
 	/* DisciplinaArray é a classe de qual vamos usar os atributos. */
 	private ArrayList<DisciplinaArray> disciplinas = new ArrayList<DisciplinaArray>();
-	
+
 	public void setDisciplinas(ArrayList<DisciplinaArray> disciplinas) {
 		this.disciplinas = disciplinas;
 	}
-	
+
 	public ArrayList<DisciplinaArray> getDisciplinas() {
 		return disciplinas;
 	}
@@ -138,37 +138,47 @@ public class AlunoArray {
 				+ ", nomePai=" + nomePai + ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola
 				+ ", serieMatriculado=" + serieMatriculado + "]";
 	}
-	
+
 	// Calcula a media do aluno
 	public double getMediaNota() {
 		double media = 0.0;
-		
-		// DisciplinaArray é tipo, "disciplina" é o nome dessa instancia e "disciplinas" é a lista
-		// que instanciamos logo acima, use a tecla command + seta do mouse para abrir a declaração
-		for(DisciplinaArray disciplina : disciplinas) {
+
+		// DisciplinaArray é tipo, "disciplina" é o nome dessa instancia e "disciplinas"
+		// é a lista
+		// que instanciamos logo acima, use a tecla command + seta do mouse para abrir a
+		// declaração
+		for (DisciplinaArray disciplina : disciplinas) {
 			media += disciplina.getNota();
 		}
 		// Retorno a soma das notas dividido por 4, é a média.
-		// OBS: O melhor é deixar de forma dinamica pois caso seja inserido mais uma disciplina você teria 
+		// OBS: O melhor é deixar de forma dinamica pois caso seja inserido mais uma
+		// disciplina você teria
 		// que vir aqui mudar para dividir por 5.
 		// Faça o java contar quantos objetos existe dentro da lista, veja abaixo.
 		// return media / 4; <- forma antiga menos eficaz
 		return media / disciplinas.size();
 	}
-	
-	// Verifica se aluno foi aprovado ou reprovado
+
+	// Verifica se aluno foi aprovado ou reprovado retornando valor boolean
 	public boolean getAlunoAprovado() {
 		double media = this.getMediaNota();
-		if(media >= 70.0) {
+		if (media >= 70.0) {
 			return true;
-		}
-		else {
+		} else {
 			return false;
 		}
-		
-			
-		
 	}
-	
 
+	// Verifica se aluno foi aprovado retornando String.
+	public String getAlunoAprovado2() {
+		if (this.getMediaNota() >= 50) {
+			if (this.getMediaNota() >= 70) {
+				return "Aluno Aprovado";
+			} else {
+				return "Aluno em Recuperação";
+			}
+		} else {
+			return "Aluno Reprovado";
+		}
+	}
 }
