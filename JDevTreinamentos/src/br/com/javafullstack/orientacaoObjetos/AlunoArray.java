@@ -178,7 +178,7 @@ public class AlunoArray {
 				return "Aluno em Recuperação";
 			}
 		} else {
-			return "Aluno Reprovado";
+			return "Aluno Reprovado.";
 		}
 	}
 }

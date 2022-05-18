@@ -45,10 +45,9 @@ public class MainAlunoDisciplinaArrayDinamico {
 		System.out.println(aluno);
 		System.out.println("Aluno = " + aluno.getNome());
 		System.out.println("Média do aluno = " + aluno.getMediaNota());
-		System.out.println("Resultado = " + (aluno.getAlunoAprovado2() + "\n"));
+		System.out.println("Resultado = " + (aluno.getAlunoAprovado2() + "\n\n"));
 		System.out.println("Disciplinas Removidas");
-		System.out.println(aluno.getDisciplinas()); //
-
+		System.out.println(aluno.getDisciplinas());
 	}
 
 }
