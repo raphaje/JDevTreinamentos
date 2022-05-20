@@ -37,9 +37,19 @@ public class MainAlunoDisciplinaArrayDinamico {
 		 * remove a disciplina da lista, "index" é a posição na lista */
 		int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina ?");
 		
-		if (escolha == 0) {
+		if (escolha == 0) { // Esse zero aqui é o valor retornado da opção "sim", e assim entrar na condição.
+		
+			int continuaRemocao = 0; // Iniciado com zero para entrar na condição do while.
+			int posicaoArray = 1;
+			
+			// While é uma estrutura que roda enquanto estiver atentendo a condição, enquanto estivermos selecionando "sim" o while vai rodar, lembre-se que quando clicamos em sim
+			// é retornado valor zero para a variável continuarRemocao
+			while (continuaRemocao == 0) {
 			int disciplinaRemover = (+ Integer.parseInt(JOptionPane.showInputDialog("Qual disciplina deseja remover, 1, 2, 3 ou 4 ?")));
-					aluno.getDisciplinas().remove(disciplinaRemover -1); //Lembre-se que a primeira posição do Array é 0, então preciamos subtrair 1 para remover o correto.
+					aluno.getDisciplinas().remove(disciplinaRemover - posicaoArray); //Lembre-se que a primeira posição do Array é 0, então preciamos subtrair 1 para remover o correto.
+					posicaoArray ++; // Incrementa mais um no valor dessa variavel, ou seja, soma mais 1, nesse caso para remover a disciplina correta no array pois após remover a primeira a lista é reordenada.
+					continuaRemocao = JOptionPane.showConfirmDialog(null, "Deseja removar mais alguma disciplina ?");
+			}
 		}
 		
 		System.out.println(aluno);
